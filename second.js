@@ -57,9 +57,14 @@ function get(listOfProducts){
     }
     }
     sum=0
-  }
-  let unique = [...new Set(listOfProducts.map(item =>"productName"+":"+item.productName+", "+"quantity"+":"+item.quantity+", "+"description"+":"+item.description))];
-  console.log(unique);
-  
-  }
-  get(listOfProducts)
+    }
+    var dataArr = listOfProducts.map(item=>{
+    return [item.productName,item]
+    }); // creates array of array
+    var maparr = new Map(dataArr); // create key value pair from array of array
+
+    var result = [...maparr.values()];//converting back to array from mapobject
+
+    console.log(result)
+    }
+    get(listOfProducts)
