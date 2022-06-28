@@ -60,10 +60,10 @@ function get(listOfProducts){
     }
     var dataArr = listOfProducts.map(item=>{
     return [item.productName,item]
-    }); // creates array of array
-    var maparr = new Map(dataArr); // create key value pair from array of array
+    }); 
+    var maparr = new Map(dataArr);
 
-    var result = [...maparr.values()];//converting back to array from mapobject
+    var result = [...maparr.values()];
 
     console.log(result)
     }
